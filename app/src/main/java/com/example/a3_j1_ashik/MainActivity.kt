@@ -1,6 +1,9 @@
 package com.example.a3_j1_ashik
 
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a3_j1_ashik.databinding.ActivityMainBinding
@@ -22,11 +25,34 @@ class MainActivity : AppCompatActivity() {
             PersonDataClass(R.drawable.avatar2, "Nusrat Dana", "456 Elm St, Springfield"),
             PersonDataClass(R.drawable.girl, "Mansura Saon", "789 Oak St, Springfield"),
             PersonDataClass(R.drawable.manager, "Aminul Munna", "789 Oak St, Springfield"),
-            PersonDataClass(R.drawable.woman, "Munia Mehrah", "789 Oak St, Springfield")
+            PersonDataClass(R.drawable.woman, "Munia Mehrah", "789 Oak St, Springfield"),
+            PersonDataClass(R.drawable.avatar, "Abir", "123 Main St, Springfield"),
+            PersonDataClass(R.drawable.avatar2, "Nusrat Dana", "456 Elm St, Springfield"),
+            PersonDataClass(R.drawable.girl, "Mansura Saon", "789 Oak St, Springfield"),
+            PersonDataClass(R.drawable.manager, "Aminul Munna", "789 Oak St, Springfield"),
+            PersonDataClass(R.drawable.woman, "Munia Mehrah", "789 Oak St, Springfield"),
+            PersonDataClass(R.drawable.avatar, "Abir", "123 Main St, Springfield"),
+            PersonDataClass(R.drawable.avatar2, "Nusrat Dana", "456 Elm St, Springfield"),
+            PersonDataClass(R.drawable.girl, "Mansura Saon", "789 Oak St, Springfield"),
+            PersonDataClass(R.drawable.manager, "Aminul Munna", "789 Oak St, Springfield"),
+            PersonDataClass(R.drawable.woman, "Munia Mehrah", "789 Oak St, Springfield"),
+            PersonDataClass(R.drawable.girl, "Mansura Saon", "789 Oak St, Springfield"),
+            PersonDataClass(R.drawable.manager, "Aminul Munna", "789 Oak St, Springfield"),
+            PersonDataClass(R.drawable.woman, "Munia Mehrah", "789 Oak St, Springfield"),
+            PersonDataClass(R.drawable.avatar, "Abir", "123 Main St, Springfield"),
+            PersonDataClass(R.drawable.avatar2, "Nusrat Dana", "456 Elm St, Springfield"),
+            PersonDataClass(R.drawable.girl, "Mansura Saon", "789 Oak St, Springfield"),
+            PersonDataClass(R.drawable.manager, "Aminul Munna", "789 Oak St, Springfield")
         )
 
 
         val adapter = PersonAdapter(this, personList)
         binding.listView.adapter = adapter
+
+
+        binding.listView.setOnItemClickListener { _, _, position, _ ->
+            val clickedPerson = personList[position]
+            Toast.makeText(this, "Clicked: ${clickedPerson.name}", Toast.LENGTH_SHORT).show()
+        }
     }
 }
